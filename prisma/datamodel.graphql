@@ -1,5 +1,5 @@
 type User {
-  id: ID!  @unique
+  id: ID!  @unique @id
   name: String!
   email: String! @unique
   password: String!
@@ -10,7 +10,7 @@ type User {
 }
 
 type Post {
-  id: ID!  @unique
+  id: ID!  @unique @id
   title: String!
   body: String!
   published: Boolean!
@@ -21,7 +21,7 @@ type Post {
 }
 
 type Comment {
-  id: ID! @unique
+  id: ID! @unique @id
   text: String! 
   post: Post! @relation(name: "CommentToPost",onDelete:SET_NULL)
   author: User! @relation(name: "CommentToUser",onDelete: SET_NULL)
