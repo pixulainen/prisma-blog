@@ -8,23 +8,24 @@
     "heroku-postbuild": "babel src --out-dir dist --copy-files",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "get-schema": "graphql get-schema -p prisma"
+    "get-schema": "graphql-codegen "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "@graphql-codegen/schema-ast": "^1.17.8",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "env-cmd": "^8.0.2",
-    "graphql-cli": "^2.16.4",
-    "graphql-yoga": "^1.14.10",
+    "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.3.0",
     "prisma-binding": "^2.1.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.8",
     "nodemon": "^1.17.5"
   }
 }
